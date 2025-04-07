@@ -1,0 +1,21 @@
+{
+  "service": {
+    "name": "Worker Shadow Service",
+    "UUID": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "description": "Service that provides a complete shadow of the worker sensor state.",
+    "characteristics": [
+      {
+        "name": "Worker Shadow",
+        "UUID": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+        "properties": {
+          "type": "concentrator_shadow_t",
+          "read": true,
+          "write": false,
+          "notify": true,
+          "indicate": false
+        },
+        "description": "Contains concentrator MAC address, timestamp, temperature, pressure, latitude, longitude, fix time, movement, and posture."
+      }
+    ]
+  }
+}

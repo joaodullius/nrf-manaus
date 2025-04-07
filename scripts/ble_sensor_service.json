@@ -1,0 +1,41 @@
+{
+  "service": {
+    "name": "BLE Sensor Service",
+    "UUID": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "description": "Service to get sensor_data_t from a sensor.",
+    "characteristics": [
+      {
+        "name": "Sensor Data",
+        "UUID": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+        "properties": {
+          "type": "sensor_data_t",
+          "read": true,
+          "write": false,
+          "notify": true,
+          "indicate": false,
+          "security": {
+            "read": "authen",
+            "notify": "authen"
+          }
+        },
+        "description": "Contains sensor_data_t structure from sensor"
+      },
+      {
+        "name": "Sensor Interval",
+        "UUID": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+        "properties": {
+          "type": "uint8_t",
+          "read": true,
+          "write": true,
+          "notify": false,
+          "indicate": false,
+          "security": {
+            "read": "authen",
+            "notify": "authen"
+          }
+        },
+        "description": "Contains sensor_data_t structure from sensor"
+      }
+    ]
+  }
+}
