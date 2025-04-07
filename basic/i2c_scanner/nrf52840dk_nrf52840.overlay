@@ -1,0 +1,48 @@
+// To get started, press Ctrl+Space to bring up the completion menu and view the available nodes.
+
+// You can also use the buttons in the sidebar to perform actions on nodes.
+// Actions currently available include:
+
+// * Enabling / disabling the node
+// * Adding the bus to a bus
+// * Removing the node
+// * Connecting ADC channels
+
+// For more help, browse the DeviceTree documentation at https://docs.zephyrproject.org/latest/guides/dts/index.html
+// You can also visit the nRF DeviceTree extension documentation at https://docs.nordicsemi.com/bundle/nrf-connect-vscode/page/guides/ncs_configure_app.html#devicetree-support-in-the-extension
+
+/ {
+	leds {
+		led4: led_4 {
+			gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+			label = "Green LED 4";
+		};
+	};
+
+	zephyr,user {
+		enables-gpios = <&gpio0 4 0>;
+	};
+};
+
+&led1 {
+	gpios = <&gpio0 14 0>;
+};
+
+&spi1 {
+	status = "disabled";
+};
+/delete-node/ &{/pin-controller/spi3_default/group1/};
+
+&i2c0 {
+	mpu6050@43 {
+		compatible = "invensense,mpu6050";
+		reg = <0x43>;
+	};
+};
+
+&i2c1 {
+	ist3931@67 {
+		compatible = "istech,ist3931";
+		reg = <0x67>;
+	};
+};
