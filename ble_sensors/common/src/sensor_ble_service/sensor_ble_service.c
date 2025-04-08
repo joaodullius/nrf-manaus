@@ -36,6 +36,7 @@ static ssize_t on_sensor_interval_write(struct bt_conn *conn, const struct bt_ga
     return len;
 }
 
+#ifdef CONFIG_BT_SMP
 BT_GATT_SERVICE_DEFINE(sensor_ble_service_svc,
     BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_128(SENSOR_BLE_SERVICE_UUID)),
     BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_128(SENSOR_DATA_CHAR_UUID),
@@ -48,6 +49,21 @@ BT_GATT_SERVICE_DEFINE(sensor_ble_service_svc,
                            BT_GATT_PERM_READ_AUTHEN | BT_GATT_PERM_WRITE,
                            on_sensor_interval_read, on_sensor_interval_write, &sensor_interval_var)
 );
+#else
+BT_GATT_SERVICE_DEFINE(sensor_ble_service_svc,
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_128(SENSOR_BLE_SERVICE_UUID)),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_128(SENSOR_DATA_CHAR_UUID),
+                           BT_GATT_CHRC_READ | BT_GATT_CHRC_NOTIFY,
+                           BT_GATT_PERM_READ,
+                           on_sensor_data_read, NULL, &sensor_data_var),
+    BT_GATT_CCC(sensor_data_ccc_change, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_128(SENSOR_INTERVAL_CHAR_UUID),
+                           BT_GATT_CHRC_READ | BT_GATT_CHRC_WRITE,
+                           BT_GATT_PERM_READ | BT_GATT_PERM_WRITE,
+                           on_sensor_interval_read, on_sensor_interval_write, &sensor_interval_var)
+);
+#endif
+
 
 /* Send notification for sensor_data characteristic */
 int send_sensor_data_notification(sensor_data_t sensor_data)
