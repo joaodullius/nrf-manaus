@@ -1,0 +1,20 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Sensor BLE Service"
+
+menuconfig SENSOR_BLE_SERVICE
+    bool "Enable Sensor BLE Service"
+    default n
+    depends on BT_PERIPHERAL
+    help
+      Enable or disable the Sensor BLE service.
+
+module = SENSOR_BLE_SERVICE
+module-str = SENSOR_BLE_SERVICE
+source "subsys/logging/Kconfig.template.log_config"
+
+endmenu # Sensor BLE Service

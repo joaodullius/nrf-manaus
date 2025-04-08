@@ -1,0 +1,23 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Sensor GNSS ADV"
+
+
+
+rsource "src/modules/parser_gnss/Kconfig.parser_gnss"
+rsource "../common/src/sensor_common/Kconfig.sensor_common"
+rsource "../common/src/sensor_ble/Kconfig.sensor_ble"
+rsource "../common/src/sensor_ble_service/Kconfig.sensor_ble_service"
+rsource "../common/src/battery_level/Kconfig.battery_level"
+
+
+
+endmenu
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu

@@ -1,0 +1,22 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Battery Level Service"
+
+menuconfig BATTERY_LEVEL
+    bool "Enable Battery Level"
+    default n
+    select BT_BAS
+    select ADC
+    depends on BT_PERIPHERAL
+    help
+      Enable or disable the Baterry Level service.
+
+module = BATTERY_LEVEL
+module-str = BATTERY_LEVEL
+source "subsys/logging/Kconfig.template.log_config"
+
+endmenu # Sensor BLE Service
