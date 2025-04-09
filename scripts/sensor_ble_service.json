@@ -1,6 +1,6 @@
 {
   "service": {
-    "name": "BLE Sensor Service",
+    "name": "Sensor BLE Service",
     "UUID": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
     "description": "Service to get sensor_data_t from a sensor.",
     "characteristics": [
@@ -14,8 +14,8 @@
           "notify": true,
           "indicate": false,
           "security": {
-            "read": "authen",
-            "notify": "authen"
+            "read": "none",
+            "notify": "none"
           }
         },
         "description": "Contains sensor_data_t structure from sensor"
@@ -30,8 +30,8 @@
           "notify": false,
           "indicate": false,
           "security": {
-            "read": "authen",
-            "notify": "authen"
+            "read": "none",
+            "notify": "none"
           }
         },
         "description": "Contains sensor_data_t structure from sensor"
