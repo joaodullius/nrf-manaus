@@ -220,7 +220,7 @@ int init_ble(void) {
     }
 #endif // CONFIG_BT_SMP    
 
-#ifndef CONFIG_SMP
+#ifdef CONFIG_SMP
     err = bt_enable(NULL);
 #else
     err = bt_enable(bt_ready);
