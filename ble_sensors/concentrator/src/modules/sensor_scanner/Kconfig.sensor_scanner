@@ -1,0 +1,19 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Sensor Scanner"
+
+menuconfig SENSOR_SCANNER_DUPLICATE_FILTER
+  bool "Enable Sensor Scanner Duplicate Filter"
+  default n
+  help
+    Enable or disable the Sensor Scanner Duplicate Filter
+
+module = SENSOR_SCANNER
+module-str = SENSOR_SCANNER
+source "subsys/logging/Kconfig.template.log_config"
+
+endmenu # Sensor Scanner

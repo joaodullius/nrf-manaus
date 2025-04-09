@@ -1,0 +1,20 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Concentrator"
+
+
+rsource "src/modules/accept_list_service/Kconfig.accept_list_service"
+rsource "src/modules/sensor_scanner/Kconfig.sensor_scanner"
+rsource "src/modules/worker_shadow_service/Kconfig.worker_shadow_service"
+rsource "src/modules/concentrator_periph/Kconfig.concentrator_periph"
+rsource "../common/src/sensor_common/Kconfig.sensor_common"
+
+endmenu
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu

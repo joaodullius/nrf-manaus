@@ -1,0 +1,20 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Accept List Service"
+
+menuconfig ACCEPT_LIST
+  bool "Enable Accept List Service"
+  default n
+  select BT_FILTER_ACCEPT_LIST
+  help
+    Enable or disable the Accept List service.
+
+module = ACCEPT_LIST
+module-str = ACCEPT_LIST
+source "subsys/logging/Kconfig.template.log_config"
+
+endmenu # Accept List Service

@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Concentrator Peripheral"
+
+module = CONCENTRATOR_PERIPH
+module-str = CONCENTRATOR_PERIPH
+source "subsys/logging/Kconfig.template.log_config"
+
+endmenu # Concentrator Peripheral
