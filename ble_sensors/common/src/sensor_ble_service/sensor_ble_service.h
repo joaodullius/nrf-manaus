@@ -2,7 +2,7 @@
 #define SENSOR_BLE_SERVICE_H
 
 #include <zephyr/bluetooth/bluetooth.h>
-#include "../../../../sensor_common/src/sensor_common.h"
+#include "sensor_common.h"
 
 // Service UUID
 #define SENSOR_BLE_SERVICE_UUID BT_UUID_128_ENCODE(0xe700afec, 0x3812, 0x4db9, 0xa1d9, 0x2c3273d2a411)
