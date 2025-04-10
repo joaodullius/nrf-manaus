@@ -15,9 +15,8 @@
 	zephyr,user {
 		io-channels = <&adc 0>;
 	};
-
-	aliases {
-		sensor-imu = &mpu6050;
+	chosen {
+		nordic,pm-ext-flash = &mx25r64;
 	};
 };
 
@@ -43,3 +42,8 @@
 		zephyr,resolution = <12>;
 	};
 };
+
+&mx25r64 {
+	status = "okay";
+	};
+	

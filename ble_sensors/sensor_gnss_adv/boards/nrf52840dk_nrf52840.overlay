@@ -15,6 +15,9 @@
 	zephyr,user {
 		io-channels = <&adc 0>;
 	};
+	chosen {
+		nordic,pm-ext-flash = &mx25r64;
+	};
 };
 &uart1 {
     status = "okay";
@@ -36,3 +39,8 @@
 		zephyr,resolution = <12>;
 	};
 };
+
+&mx25r64 {
+	status = "okay";
+	};
+	
