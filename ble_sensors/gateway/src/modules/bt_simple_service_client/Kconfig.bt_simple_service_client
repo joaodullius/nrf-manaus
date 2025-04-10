@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "BT Simple Service Client"
+
+module = BT_SIMPLE_SERVICE_CLIENT
+module-str = BT_SIMPLE_SERVICE_CLIENT
+source "subsys/logging/Kconfig.template.log_config"
+
+endmenu # BT Simple Service Client

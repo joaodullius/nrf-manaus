@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menu "Gateway BLE"
+
+module = GATEWAY_LTE
+module-str = Gateway_LTE
+source "subsys/logging/Kconfig.template.log_config"
+
+endmenu # Gateway BLE
