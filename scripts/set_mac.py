@@ -8,7 +8,7 @@ from bleak.exc import BleakError
 ADD_DEVICE_CHAR_UUID    = "22f64492-bb02-4ccf-9612-c749be0c897d"
 REMOVE_DEVICE_CHAR_UUID = "aebd5484-453a-4bb5-a8ea-1593405a4a36"
 CLEAR_LIST_CHAR_UUID    = "67e19398-8879-40e8-b513-b75f0268278c"
-SCAN_CONTROL_CHAR_UUID  = "4f3b5a2c-8d1e-4b6c-9f7d-5a2c8d1e4b6c"
+SCAN_CONTROL_CHAR_UUID  = "4f3b5a2c-0x8d1e-4b6c-9f7d-5a2c8d1e4b6c"
 
 # MAC address of the concentrator
 CONCENTRATOR_MAC = "E2:E4:4F:24:B0:90"
