@@ -128,7 +128,7 @@ int main(void) {
 #endif // CONFIG_SENSOR_BLE_SERVICE
 
 		} else {
-		  LOG_ERR("Failed to read sensor data");
+		  //LOG_ERR("Failed to read sensor data");
 		}
         k_sleep(K_MSEC(SAMPLE_INTERVAL_MS)); 
     }
