@@ -18,8 +18,6 @@
 
 LOG_MODULE_REGISTER(gateway_ble, CONFIG_GATEWAY_BLE_LOG_LEVEL);
 
-static concentrator_shadow_handler_t sensor_handler = NULL;
-
 ble_state_t ble_state = BLE_DISCONNECTED;
 
 static struct bt_conn *default_conn;
@@ -193,7 +191,6 @@ BT_SCAN_CB_INIT(scan_cb, scan_filter_match, NULL, scan_connecting_error, scan_co
 
 static struct bt_le_scan_param scan_param = {
     .type = BT_LE_SCAN_TYPE_ACTIVE,
-
     .options = BT_LE_SCAN_OPT_NONE,
     .interval = BT_GAP_SCAN_FAST_INTERVAL,
     .window = BT_GAP_SCAN_FAST_WINDOW,
@@ -212,21 +209,21 @@ static void ble_data_sent(struct bt_simple_service *simple_service, uint8_t err,
     }
 }
 
-static uint8_t ble_data_received(struct bt_simple_service *simple_service,
-        const uint8_t *data, uint16_t len)
-{
-    ARG_UNUSED(simple_service);
+// static uint8_t ble_data_received(struct bt_simple_service *simple_service,
+//         const uint8_t *data, uint16_t len)
+// {
+//     ARG_UNUSED(simple_service);
 
-    if (*data == 0x01) {
-        LOG_DBG("Received value: 0x01, setting LED on");
+//     if (*data == 0x01) {
+//         LOG_DBG("Received value: 0x01, setting LED on");
 
-    } else if (*data == 0x00) {
+//     } else if (*data == 0x00) {
 
-        LOG_DBG("Received value: 0x00, setting LED off");
-    }
+//         LOG_DBG("Received value: 0x00, setting LED off");
+//     }
 
-    return BT_GATT_ITER_CONTINUE;
-}
+//     return BT_GATT_ITER_CONTINUE;
+// }
 
 static int simple_service_client_init(concentrator_shadow_handler_t client_handler)
 {

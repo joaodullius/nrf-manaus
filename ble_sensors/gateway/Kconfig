@@ -41,6 +41,9 @@ endmenu
 menu "Gateway BLE"
 
 rsource "src/modules/gateway_ble/Kconfig.gateway_ble"
+rsource "../concentrator/src/modules/worker_shadow_service/Kconfig.worker_shadow_service"
+rsource "../common/src/sensor_common/Kconfig.sensor_common"
+
 
 endmenu
 

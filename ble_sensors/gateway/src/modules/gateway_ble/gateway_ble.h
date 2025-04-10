@@ -3,8 +3,8 @@
 #ifndef GATEWAY_BLE_H
 #define GATEWAY_BLE_H
 
-#include "../../../../sensor_common/src/sensor_common.h"
-#include "../../../../concentrator/src/worker_shadow_service.h"
+#include "sensor_common.h"
+#include "worker_shadow_service.h"
 #include "bt_simple_service_client.h"
 
 #include <zephyr/types.h>

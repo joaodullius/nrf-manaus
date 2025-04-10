@@ -10,8 +10,8 @@
 #include <zephyr/bluetooth/conn.h>
 #include <bluetooth/gatt_dm.h>
 
-#include "../../../../sensor_common/src/sensor_common.h"
-#include "../../../../concentrator/src/worker_shadow_service.h"
+#include "sensor_common.h"
+#include "worker_shadow_service.h"
 
 
 /** @brief Handles on the connected peer device that are needed to interact with
@@ -22,9 +22,8 @@ struct bt_simple_service_client_handles {
         /** Handle of the LED characteristic, as provided by
 	 *  a discovery.
          */
-	uint16_t led;
-	uint16_t button;
-	uint16_t button_ccc;
+	uint16_t shadow;
+	uint16_t shadow_ccc;
 };
 
 struct bt_simple_service;
@@ -88,10 +87,10 @@ struct bt_simple_service {
     /** Handles on the connected peer device that are needed to interact with the device. */
 	struct bt_simple_service_client_handles handles;
 
-	/** GATT subscribe parameters for BUTTON Characteristic. */
-	struct bt_gatt_subscribe_params button_notif_params;
+	/** GATT subscribe parameters for SHADOW Characteristic. */
+	struct bt_gatt_subscribe_params shadow_notif_params;
 
-	/** GATT write parameters for LED Characteristic. */
+	/** GATT write parameters for WRITE Characteristic. */
 	struct bt_gatt_write_params write_params;
 
 	/** Application callbacks. */

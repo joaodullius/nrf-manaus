@@ -62,7 +62,7 @@ uint8_t concentrator_data_handler(struct bt_simple_service *simple_service,
     k_mutex_unlock(&shadow_mutex);
 
     LOG_DBG("Shadow atualizado via notificação BLE");
-    //print_shadow(&current_shadow);
+    print_shadow(&current_shadow);
 
     return BT_GATT_ITER_CONTINUE;
 }
@@ -196,7 +196,6 @@ static void on_aws_iot_evt_disconnected(void)
 
 static void on_aws_iot_evt_fota_done(const struct aws_iot_evt *const evt)
 {
-	int err;
 
 	/* Tear down MQTT connection. */
 	(void)aws_iot_disconnect();
