@@ -340,6 +340,7 @@ int main(void)
         return 1;
     }
 
+	LOG_DGB("Inicializando BLE...");
     err = bt_enable(NULL);
     if (err) {
         LOG_ERR("Inicialização Bluetooth falhou: %d", err);
