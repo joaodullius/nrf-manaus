@@ -63,5 +63,4 @@
 	pinctrl-0 = <&uart0_default_alt>;
 	pinctrl-1 = <&uart0_sleep_alt>;
 	pinctrl-names = "default", "sleep";
-	disable-rx;
 };
